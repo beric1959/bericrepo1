@@ -23,6 +23,7 @@ import java.security.Security;
 import java.security.cert.CertificateFactory;
 import java.security.cert.X509Certificate;
 import java.util.Collections;
+import java.util.TimeZone;
 
 /*
 <dependency>
@@ -35,6 +36,11 @@ import java.util.Collections;
 public class LK_ESIA_AuthLink {
 
     public static void main(String... args) throws Exception {
+        TimeZone tzone = TimeZone.getDefault();
+        System.out.println("Dn:"+tzone.getDisplayName());
+        System.out.println("Id:"+tzone.getID());
+        tzone.setID(tzone.getID());
+        System.out.println(Utility.get_timestamp());
         System.out.println(get_signature("test", "", "", ""));
     }
 
