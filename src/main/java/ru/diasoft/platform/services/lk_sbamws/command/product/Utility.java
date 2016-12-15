@@ -17,6 +17,7 @@ import java.io.Serializable;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.TimeZone;
 import java.util.regex.Matcher;
@@ -36,6 +37,13 @@ import javax.swing.ImageIcon;
  * 
  */
 public class Utility {
+
+    public static String get_timestamp(){
+
+        Date date = new Date();
+        return
+                String.format("%tY.%tm.%td %tH:%tM:%tS %tz" , date, date, date,date, date, date,date);
+    }
 
     /**
      * Стремная константа, применяемая для запроса состояния из АРМ настройщика.
